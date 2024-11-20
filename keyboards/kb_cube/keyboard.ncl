@@ -11,8 +11,6 @@ let { CH552T, .. } = import "fak/mcus.ncl" in
   keys =
     let D = DirectPinKey in
     [
-        D 10, D 11, D 12,
-        D 14, D 15, D 16,
-        D 32, D 34, D 30,
+        D 17, D 16, D 13, D 12, D 11, D 10
     ]
 }

@@ -1,5 +1,5 @@
 .direnv/
 .vscode/
-.fak_cache/
+# .fak_cache/
 build/
 subprojects/fak/
