@@ -1,0 +1,11 @@
+{
+  "central": {
+    "c": "#include \"ch55x.h\"\n\n__code uint32_t key_map[KEY_COUNT] = { 17 };\n\n// (No hold tap behaviors)\n\n// (No tap dance bindings)\n\n// (No split periph key indices)\n\n// (No split periph encoder indices)\n\n// (No combo defs)\n\n// (No encoder defs)\n\n// (No conditional layers)\n\n// (No macros)\n\n\n#define COL0_PIN 3\nSBIT(COL0, P3_ADDR, COL0_PIN);\n#define ROW0_PIN 0\nSBIT(ROW0, P1_ADDR, ROW0_PIN);\n\n\nvoid keyboard_init_user() {\nCOL0 = 1;\nROW0 = 1;\n}\n\nstatic void matrix_switch_delay() {\n  for (uint8_t i = 16; i; i--) {\n    __asm__ (\"nop\");\n  }\n}\n\nvoid keyboard_scan_user() {\n// Direct pins\n\n\n// Matrix (col-to-row)\nROW0 = 0;\nmatrix_switch_delay();\nkey_state_inform(0, !COL0);\nROW0 = 1;\n\n// Matrix (row-to-col)\n\n\n// Encoders\n\n}",
+    "h": "#define CH55X 2\n#define COMBO_COUNT 0\n#define CONDITIONAL_LAYER_COUNT 0\n#define DEBOUNCE_MS 5\n#define ENCODER_COUNT 0\n#define KEY_COUNT 1\n#define KEY_EVENT_QUEUE_LEN 32\n#define LAYER_COUNT 1\n#define MACRO_STEP_ARG_COUNT 0\n#define MOUSE_MOVE_SPEED 4\n#define MOUSE_SCROLL_INTERVAL_MS 20\n#define SPLIT_SIDE_CENTRAL \n#define USB_EP0_SIZE 8\n#define USB_EP1_SIZE 8\n#define USB_EP2_SIZE 8\n#define USB_EP3_SIZE 4\n#define USB_NUM_INTERFACES 1\n#define USB_PRODUCT_ID 47806\n#define USB_PRODUCT_VER 256\n#define USB_VENDOR_ID 51966\n#define XADDR_KEY_EVENT_QUEUE 0\n#define XADDR_KEY_STATES 163\n#define XADDR_LAST_TAP_TIMESTAMP 168\n#define XADDR_STRONG_MODS_REF_COUNT 170\n#define XADDR_USB_EP0 178\n#define XADDR_USB_EP1 188\n#define XADDR_USB_TX_LEN 198\n\n#include \"keyboard.h\"\n\nvoid keyboard_init_user();\nvoid keyboard_scan_user();"
+  },
+  "meson_options": {
+    "extra_periph_sources": "",
+    "extra_sources": "",
+    "split": false
+  }
+}
