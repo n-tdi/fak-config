@@ -4,9 +4,9 @@ let { CH552T, .. } = import "fak/mcus.ncl" in
 {
   mcu = CH552T,
   usb_dev = {
-    vendor_id = 51966,  # 0xCAFE
-    product_id = 47806, # 0xBABE
-    product_ver = 256,  # 0x0100
+    vendor_id = 20055,  # 0x4E57 
+    product_id = 51966, # 0x3d1a
+    product_ver = 1,  # 0x0001
   },
   encoders = [
     PhysicalEncoder 10 11 15,
